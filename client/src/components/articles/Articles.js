@@ -4,12 +4,11 @@ import axios from "axios";
 
 const Articles = (props) => {
     const addToFav = (title, url) => {
-        console.log(title)
-        console.log(url)
-        axios.post("/api/saved", {title: title, url: url}).then(res => console.log(res));
+        axios.post("/api/saved", {title: title, url: url}).then(res => { 
+            console.log(res);
+        });
     }
 
-    console.log("PROPS", props);
     return(
         <div>
             <br></br>
@@ -21,7 +20,7 @@ const Articles = (props) => {
                     <div>
                         <h1>{props.title}</h1>
                         <a href={props.url} target="_blank">Check More!</a>
-                        <button onClick={() => addToFav(props.title, props.url)}>Add To Favorites</button>
+                        <button className="add" onClick={() => addToFav(props.title, props.url)}>Add To Favorites</button>
                     </div>
                 </div>
             </div>

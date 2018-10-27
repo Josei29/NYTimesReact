@@ -34,7 +34,6 @@ class Form extends Component {
             let results = []
             for (let i = 0; i < this.state.records; i++) {
                 
-                console.log(res.data);
                 let result = {
                     title: res.data.response.docs[i].headline.main,
                     url: res.data.response.docs[i].web_url
